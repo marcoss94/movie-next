@@ -70,7 +70,6 @@ const Form = ({ formData, forNewMovie = true }: IProps) => {
 
     const postData = async (form: IFormValue) => {
         try {
-            console.log(form)
             const res = await fetch('/api/movie', {
                 method: 'POST',
                 headers: {
@@ -80,7 +79,6 @@ const Form = ({ formData, forNewMovie = true }: IProps) => {
             })
 
             const data = await res.json()
-            console.log(data)
             if (!data.success) {
                 for (const key in data.error.errors) {
                     let error = data.error.errors[key]

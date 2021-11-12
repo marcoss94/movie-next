@@ -69,11 +69,9 @@ export async function getServerSideProps({ params }: any) {
         if (!movie) {
             return { props: { success: false, error: 'Movie not found' } }
         }
-        console.log(movie)
         movie._id = `${movie._id}`
         return { props: { success: true, movie } }
     } catch (error: any) {
-        console.log(error)
         if (error.kind === 'ObjectId') {
             return { props: { success: false, error: 'Movie not valid' } }
         } else {
