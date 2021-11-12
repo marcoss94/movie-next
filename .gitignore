@@ -15,6 +15,8 @@
 # production
 /build
 
+.prettierrc
+
 # misc
 .DS_Store
 *.pem
